@@ -1,0 +1,44 @@
+<!-- video tag -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- 실시간 영상 hls를 보기 위해 사용하는 라이브러리 -->
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    <title>실시간 cctv 보기</title>
+</head>
+<body>
+
+<h2>실시간 CCTV</h2>
+
+<!-- CCTV 버튼 리스트 -->
+<strong>테스트 url</strong>
+<ol>
+    <li>http://cctvsec.ktict.co.kr/39/jdYodQCc1uzAmm6/U2V2vH8TwQVs9iBn19JdXn0tjA2IwCJYApNWQjN7PZYu3eccyRvL++jwsGiL3udu1F6hXXsM3O1CEKBc2zkXjf8SwJY=</li>
+    <li>http://cctvsec.ktict.co.kr/42/3lungqqkiqg/xvNDt8Ag4k1zSxDIQaAH2FXHJMWpasqsmTBp14Updgl4QI2XgRTpxIjSpAANBXlAv+r3y3JqFB3/P1MVV9niBgjefpYM0TU=</li>
+    <li>http://cctvsec.ktict.co.kr/43/nTZJ9MmZlelaLpIRdNY4/QGvbTUFtzJK49PXNuFkDVPCDrXV5uEREeIIuMHuOAYeLhjFfM1uWvBcPKqFNcRW4YASrvLP4kX6+bG8JIPFCt4=</li>
+</ol>
+<input type="text" id="input_url" placeholder="url 입력">
+<button class="cctv-button" onclick="openCCTV()">cctv 보기</button><br>
+
+<!-- 모달 구조 -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <video id="modalVideo" controls controlslist="nodownload noplaybackrate noremoteplayback" disablePictureInPicture preload="auto" autoplay loop>
+            <source id="modalSource" src="" type="video/mp4">
+            cctv video
+        </video>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
